@@ -18,6 +18,14 @@ I have about a year of hands-on experience in DevOps engineering acquired while 
 ### PET PROJECTS
 
 #### 1. An automated deployment of a full-stack website
+*Project description:* Terraform code provisions a Kubernetes cluster and installs External Secrets and External DNS operators, AWS Loadbalancer Controller, ArgoCD, Prometheus+Grafana+Loki stack, SonarQube, and JFrog Artifactory. As soon as ArgoCD is installed, it automatically deploys frontend and backend as Helm charts. CI/CD was implemented using GitHub Actions workflows and ArgoCD GitOps approach. 
+
+Continuous integration includes checks for security best practices:
+- static code analysis via self-hosted SonarQube
+- analysis of Terraform code via Checkov
+- checking Docker image for size efficiency using Dive
+- scanning Docker images for vulnerabilities with Trivy and Grype
+
 Techonologies:
 - Orchestration: Kubernetes (AWS EKS) for backend and frontend services
 - Infrastructure: AWS (EKS, ECR, ALB, Route53, RDS, SSM, IAM, VPC)
